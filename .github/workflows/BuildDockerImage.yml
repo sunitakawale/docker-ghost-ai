@@ -16,10 +16,10 @@ jobs:
       
       - uses: azure/docker-login@v1
         with:
-          login-server: ncacr001.azurecr.io
+          login-server: workflowreg.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
       - run: |
-          docker build . -t ncacr001.azurecr.io/appdb:${{ github.sha }}
-          docker push ncacr001.azurecr.io/appdb:${{ github.sha }}
+          docker build . -t workflowreg.azurecr.io/appdb:${{ github.sha }}
+          docker push workflowreg.azurecr.io/appdb:${{ github.sha }}
