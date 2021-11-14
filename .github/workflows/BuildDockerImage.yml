@@ -16,9 +16,9 @@ jobs:
       
       - uses: azure/docker-login@v1
         with:
-          login-server: workflowreg.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+          login-server: workflowreg.azurecr.io,
+          username: 'workflowreg'
+          password: 'A3J1ct+Dxaenen91ADXVlXXIjMr1Nfht'
 
       - run: |
           docker build . -t workflowreg.azurecr.io/appdb:${{ github.sha }}
