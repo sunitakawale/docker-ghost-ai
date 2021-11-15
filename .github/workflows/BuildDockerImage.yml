@@ -21,6 +21,6 @@ jobs:
           password: JTbCUxK91MfTGGATqTcCR=I9jWBnhGc1
 
       - run: |
-          
+          docker login workflowreg.azurecr.io --username workflowreg --password JTbCUxK91MfTGGATqTcCR=I9jWBnhGc1
           docker build . -t workflowreg.azurecr.io/ghost:${{ github.sha }}
           docker push workflowreg.azurecr.io/ghost:${{ github.sha }}
