@@ -1,4 +1,4 @@
-name: Build a Docker image and Push it to ACR try
+name: Build a Docker image and Push it to ACR try1
 
 on:
   push:
