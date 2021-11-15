@@ -18,7 +18,7 @@ jobs:
         with:
           login-server: workflowreg.azurecr.io,
           username: 'workflowreg'
-          password: 'A3J1ct+Dxaenen91ADXVlXXIjMr1Nfht'
+          password: 'JTbCUxK91MfTGGATqTcCR=I9jWBnhGc1'
 
       - run: |
           docker build . -t workflowreg.azurecr.io/ghost:${{ github.sha }}
