@@ -17,10 +17,10 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: workflowreg.azurecr.io,
-          username: workflowreg
-          password: JTbCUxK91MfTGGATqTcCR=I9jWBnhGc1
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
 
       - run: |
-          docker login workflowreg.azurecr.io --username workflowreg --password JTbCUxK91MfTGGATqTcCR=I9jWBnhGc1
+          docker login workflowreg.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password ${{ secrets.ACR_PASSWORD }}
           docker build . -t workflowreg.azurecr.io/ghost:${{ github.sha }}
           docker push workflowreg.azurecr.io/ghost:${{ github.sha }}
